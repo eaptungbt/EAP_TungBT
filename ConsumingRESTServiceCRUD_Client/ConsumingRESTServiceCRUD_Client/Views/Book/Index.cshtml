@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = null;
+}
+@using ConsumingRESTServiceCRUD_Client.Models
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <fieldset>
+        <legend>List Book</legend>
+        <table cellpadding="2" cellspacing="2">
+            <tr>
+                <th>BookId</th>
+                <th>Book Name</th>
+                <th>ISBN</th>
+            </tr>
+            @foreach (Book b in ViewBag.listBooks) {
+                <tr>
+                    <td>@b.BookId</td>
+                    <td>@b.Title</td>
+                    <td>@b.ISBN</td>
+                </tr>
+            }
+        </table>
+    </fieldset>
+</body>
+</html>
+
