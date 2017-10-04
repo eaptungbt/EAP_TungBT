@@ -47,6 +47,5 @@ namespace DemoRESTServiceCRUD
             RequestFormat = WebMessageFormat.Json,
             UriTemplate = "DeleteBook/{id}")]
         string DeleteBook(string id);
-
     }
 }

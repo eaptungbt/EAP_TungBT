@@ -16,3 +16,4 @@ D:\EAP_TungBT\DemoRESTServiceCRUD\DemoRESTServiceCRUD\bin\Microsoft.AI.WindowsSe
 D:\EAP_TungBT\DemoRESTServiceCRUD\DemoRESTServiceCRUD\bin\Microsoft.ApplicationInsights.xml
 D:\EAP_TungBT\DemoRESTServiceCRUD\DemoRESTServiceCRUD\obj\Debug\DemoRESTServiceCRUD.dll
 D:\EAP_TungBT\DemoRESTServiceCRUD\DemoRESTServiceCRUD\obj\Debug\DemoRESTServiceCRUD.pdb
+D:\EAP_TungBT\DemoRESTServiceCRUD\DemoRESTServiceCRUD\obj\Debug\DemoRESTServiceCRUD.csprojResolveAssemblyReference.cache

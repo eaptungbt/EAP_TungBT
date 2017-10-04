@@ -10,7 +10,6 @@ namespace ConsumingRESTServiceCRUD_Client.Models
 {
     public class BookServiceClient
     {
-        string BASE_URL = "http://localhost:54529/BookServices.svc";
         BookServicesClient client = new BookServicesClient();
 
         public List<Book> getAllBook() {
@@ -18,7 +17,6 @@ namespace ConsumingRESTServiceCRUD_Client.Models
             //var content = syncClient.DownloadString(BASE_URL+"Books");
             //var json_serializer = new JavaScriptSerializer();
             //return json_serializer.Deserialize<List<Book>>(content);
-
             
             var list =client.GetBookList().ToList();
             var rt = new List<Book>();
