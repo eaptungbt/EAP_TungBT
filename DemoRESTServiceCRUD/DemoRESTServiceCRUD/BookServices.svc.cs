@@ -15,13 +15,13 @@ namespace DemoRESTServiceCRUD
         static IBookRepository repository = new BookRepository();
 
 
-        public string AddBook(Book book, string id)
+        public string AddBook(Book book)
         {
             Book newBook = repository.AddNewBook(book);
             return "id=" + newBook.BookId;
         }
 
-        public string DeleteBook(Book book, string id)
+        public string DeleteBook(string id)
         {
             bool deleted = repository.DeleteABook(int.Parse(id));
             if (deleted)
@@ -40,16 +40,16 @@ namespace DemoRESTServiceCRUD
             return repository.GetAllBooks();
         }
 
-        public string UpdateBook(Book book, string id)
+        public string UpdateBook(Book book)
         {
-            bool deleted = repository.DeleteABook(int.Parse(id));
+            bool deleted = repository.UpdateABook(book);
             if (deleted)
             {
-                return "Book with id= " + id + " deleted sucessfully";
+                return "Book with id= " + book.BookId + " update sucessfully";
             }
             else
             {
-                return "Unable to delete book with id = " + id;
+                return "Unable to update book with id = " + book.BookId;
             }
         }
     }

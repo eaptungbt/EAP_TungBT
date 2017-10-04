@@ -31,7 +31,6 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/RESTServicesCRUD_Demo" minOccurs="0" name="book" nillable="true" type="q3:Book" />
-        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -46,7 +45,6 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/RESTServicesCRUD_Demo" minOccurs="0" name="book" nillable="true" type="q4:Book" />
-        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -60,7 +58,6 @@
   <xs:element name="DeleteBook">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/RESTServicesCRUD_Demo" minOccurs="0" name="book" nillable="true" type="q5:Book" />
         <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>

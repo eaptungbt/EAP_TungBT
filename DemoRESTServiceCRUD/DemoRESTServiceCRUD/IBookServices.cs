@@ -32,21 +32,21 @@ namespace DemoRESTServiceCRUD
             ResponseFormat = WebMessageFormat.Json,
             RequestFormat = WebMessageFormat.Json,
             UriTemplate = "AddBook/{id}")]
-        string AddBook(Book book, string id);
+        string AddBook(Book book);
 
         [OperationContract]
         [WebInvoke(Method = "PUT",
             ResponseFormat = WebMessageFormat.Json,
             RequestFormat = WebMessageFormat.Json,
             UriTemplate = "UpdateBook/{id}")]
-        string UpdateBook(Book book, string id);
+        string UpdateBook(Book book);
 
         [OperationContract]
         [WebInvoke(Method = "PUT",
             ResponseFormat = WebMessageFormat.Json,
             RequestFormat = WebMessageFormat.Json,
             UriTemplate = "DeleteBook/{id}")]
-        string DeleteBook(Book book, string id);
+        string DeleteBook(string id);
 
     }
 }

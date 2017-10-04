@@ -107,22 +107,22 @@ namespace ConsumingRESTServiceCRUD_Client.ServiceReference1 {
         System.Threading.Tasks.Task<ConsumingRESTServiceCRUD_Client.ServiceReference1.Book> GetBookByIdAsync(string id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookServices/AddBook", ReplyAction="http://tempuri.org/IBookServices/AddBookResponse")]
-        string AddBook(ConsumingRESTServiceCRUD_Client.ServiceReference1.Book book, string id);
+        string AddBook(ConsumingRESTServiceCRUD_Client.ServiceReference1.Book book);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookServices/AddBook", ReplyAction="http://tempuri.org/IBookServices/AddBookResponse")]
-        System.Threading.Tasks.Task<string> AddBookAsync(ConsumingRESTServiceCRUD_Client.ServiceReference1.Book book, string id);
+        System.Threading.Tasks.Task<string> AddBookAsync(ConsumingRESTServiceCRUD_Client.ServiceReference1.Book book);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookServices/UpdateBook", ReplyAction="http://tempuri.org/IBookServices/UpdateBookResponse")]
-        string UpdateBook(ConsumingRESTServiceCRUD_Client.ServiceReference1.Book book, string id);
+        string UpdateBook(ConsumingRESTServiceCRUD_Client.ServiceReference1.Book book);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookServices/UpdateBook", ReplyAction="http://tempuri.org/IBookServices/UpdateBookResponse")]
-        System.Threading.Tasks.Task<string> UpdateBookAsync(ConsumingRESTServiceCRUD_Client.ServiceReference1.Book book, string id);
+        System.Threading.Tasks.Task<string> UpdateBookAsync(ConsumingRESTServiceCRUD_Client.ServiceReference1.Book book);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookServices/DeleteBook", ReplyAction="http://tempuri.org/IBookServices/DeleteBookResponse")]
-        string DeleteBook(ConsumingRESTServiceCRUD_Client.ServiceReference1.Book book, string id);
+        string DeleteBook(string id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookServices/DeleteBook", ReplyAction="http://tempuri.org/IBookServices/DeleteBookResponse")]
-        System.Threading.Tasks.Task<string> DeleteBookAsync(ConsumingRESTServiceCRUD_Client.ServiceReference1.Book book, string id);
+        System.Threading.Tasks.Task<string> DeleteBookAsync(string id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -168,28 +168,28 @@ namespace ConsumingRESTServiceCRUD_Client.ServiceReference1 {
             return base.Channel.GetBookByIdAsync(id);
         }
         
-        public string AddBook(ConsumingRESTServiceCRUD_Client.ServiceReference1.Book book, string id) {
-            return base.Channel.AddBook(book, id);
+        public string AddBook(ConsumingRESTServiceCRUD_Client.ServiceReference1.Book book) {
+            return base.Channel.AddBook(book);
         }
         
-        public System.Threading.Tasks.Task<string> AddBookAsync(ConsumingRESTServiceCRUD_Client.ServiceReference1.Book book, string id) {
-            return base.Channel.AddBookAsync(book, id);
+        public System.Threading.Tasks.Task<string> AddBookAsync(ConsumingRESTServiceCRUD_Client.ServiceReference1.Book book) {
+            return base.Channel.AddBookAsync(book);
         }
         
-        public string UpdateBook(ConsumingRESTServiceCRUD_Client.ServiceReference1.Book book, string id) {
-            return base.Channel.UpdateBook(book, id);
+        public string UpdateBook(ConsumingRESTServiceCRUD_Client.ServiceReference1.Book book) {
+            return base.Channel.UpdateBook(book);
         }
         
-        public System.Threading.Tasks.Task<string> UpdateBookAsync(ConsumingRESTServiceCRUD_Client.ServiceReference1.Book book, string id) {
-            return base.Channel.UpdateBookAsync(book, id);
+        public System.Threading.Tasks.Task<string> UpdateBookAsync(ConsumingRESTServiceCRUD_Client.ServiceReference1.Book book) {
+            return base.Channel.UpdateBookAsync(book);
         }
         
-        public string DeleteBook(ConsumingRESTServiceCRUD_Client.ServiceReference1.Book book, string id) {
-            return base.Channel.DeleteBook(book, id);
+        public string DeleteBook(string id) {
+            return base.Channel.DeleteBook(id);
         }
         
-        public System.Threading.Tasks.Task<string> DeleteBookAsync(ConsumingRESTServiceCRUD_Client.ServiceReference1.Book book, string id) {
-            return base.Channel.DeleteBookAsync(book, id);
+        public System.Threading.Tasks.Task<string> DeleteBookAsync(string id) {
+            return base.Channel.DeleteBookAsync(id);
         }
     }
 }
