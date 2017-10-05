@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+ @using (Html.BeginForm("Cong", "Calculator"))
+ {
+    <p>
+        a:@Html.TextBox("a")
+        <br />
+        <br />
+        b:@Html.TextBox("b")
+    </p>
+    <input type="submit" value="Cong"/>
+    <br />
+    }
+    Kết quả: @ViewBag.ketqua
+</body>
+</html>
