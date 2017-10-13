@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Class="ServiceDatabaseDataContext" Serialization="Unidirectional" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=THANHTUNG;Initial Catalog=BankService;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="BankServiceConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="" Member="KhachHangs">
+    <Type Name="KhachHang">
+      <Column Member="maKH" Type="System.String" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Member="pin" Type="System.String" CanBeNull="false" />
+      <Column Member="soDu" Type="System.Decimal" CanBeNull="false" />
+      <Association Name="KhachHang_GiaoDich" Member="GiaoDiches" ThisKey="maKH" OtherKey="maKH" Type="GiaoDich" />
+    </Type>
+  </Table>
+  <Table Name="" Member="DoiTacs">
+    <Type Name="DoiTac">
+      <Column Member="maDoiTac" Type="System.String" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Member="matKhau" Type="System.String" CanBeNull="false" />
+      <Column Member="soDu" Type="System.Decimal" CanBeNull="false" />
+      <Association Name="DoiTac_GiaoDich" Member="GiaoDiches" ThisKey="maDoiTac" OtherKey="maDoiTac" Type="GiaoDich" />
+    </Type>
+  </Table>
+  <Table Name="" Member="GiaoDiches">
+    <Type Name="GiaoDich">
+      <Column Member="maGD" Type="System.String" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Member="maKH" Type="System.String" CanBeNull="false" />
+      <Column Member="maDoiTac" Type="System.String" CanBeNull="false" />
+      <Column Member="soTien" Type="System.Decimal" CanBeNull="false" />
+      <Column Member="tenGD" Type="System.String" CanBeNull="false" />
+      <Column Member="loai" Type="System.Int32" CanBeNull="false" />
+      <Column Member="thoiGian" Type="System.DateTime" CanBeNull="false" />
+      <Column Member="phiGD" Type="System.Decimal" CanBeNull="false" />
+      <Association Name="KhachHang_GiaoDich" Member="KhachHang" ThisKey="maKH" OtherKey="maKH" Type="KhachHang" IsForeignKey="true" />
+      <Association Name="DoiTac_GiaoDich" Member="DoiTac" ThisKey="maDoiTac" OtherKey="maDoiTac" Type="DoiTac" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

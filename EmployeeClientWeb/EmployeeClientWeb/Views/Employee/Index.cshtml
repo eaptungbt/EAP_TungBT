@@ -1,0 +1,66 @@
+﻿@model IEnumerable<EmployeeClientWeb.EmployeeService.Employee>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table cellpadding="2" cellspacing="2">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.empID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.empFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.empLastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.empAge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.empAddress)
+            </th>
+            <th></th>
+        </tr>
+    @if (ViewBag.listEmployee != null)
+    {
+        foreach (EmployeeClientWeb.EmployeeService.Employee item in ViewBag.listEmployee)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.empID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.empFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.empLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.empAge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.empAddress)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.empID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.empID })
+            </td>
+        </tr>
+        }
+    }
+    </table>
+</body>
+</html>

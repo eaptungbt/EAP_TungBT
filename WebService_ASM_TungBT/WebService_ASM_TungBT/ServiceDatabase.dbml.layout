@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="ServiceDatabase">
+  <DataContextMoniker Name="/ServiceDatabaseDataContext" />
+  <nestedChildShapes>
+    <classShape Id="97e19407-4a11-461b-b147-c88507817698" absoluteBounds="0.75, 1, 2, 1.3862939453125">
+      <DataClassMoniker Name="/ServiceDatabaseDataContext/KhachHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c5e41166-f80f-42cd-9cd3-ac3e7b56f89c" absoluteBounds="0.76500000000000012, 1.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9c0b4e3b-4b42-47bf-a30a-17af8496c597" absoluteBounds="5.625, 0.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/ServiceDatabaseDataContext/DoiTac" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3551e272-b155-4a88-b690-a3eeb17c8276" absoluteBounds="5.6400000000000006, 1.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="529f4f32-93dd-4ad3-af39-f161269ed134" absoluteBounds="3.375, 2, 2, 2.3478011067708326">
+      <DataClassMoniker Name="/ServiceDatabaseDataContext/GiaoDich" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1b40193f-c681-4f16-85d6-2d17422aa0c8" absoluteBounds="3.3899999999999997, 2.46, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.75 : 2.3862939453125); (1.75 : 3.17390055338542); (3.375 : 3.17390055338542)]" manuallyRouted="true" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ServiceDatabaseDataContext/KhachHang/KhachHang_GiaoDich" />
+      <nodes>
+        <classShapeMoniker Id="97e19407-4a11-461b-b147-c88507817698" />
+        <classShapeMoniker Id="529f4f32-93dd-4ad3-af39-f161269ed134" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.625 : 1.31814697265625); (4.375 : 1.31814697265625); (4.375 : 2)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ServiceDatabaseDataContext/DoiTac/DoiTac_GiaoDich" />
+      <nodes>
+        <classShapeMoniker Id="9c0b4e3b-4b42-47bf-a30a-17af8496c597" />
+        <classShapeMoniker Id="529f4f32-93dd-4ad3-af39-f161269ed134" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

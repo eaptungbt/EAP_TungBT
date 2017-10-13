@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="WebService_ASM_TungBT.BankingService" CodeBehind="BankingService.svc.cs" %>
