@@ -1,0 +1,59 @@
+﻿@model BankClient.ServiceReference1.KhachHang
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thanh Toán</title>
+</head>
+<body>
+    @using (Html.BeginForm(FormMethod.Post)) 
+    {
+        @Html.AntiForgeryToken()
+        
+        <div class="form-horizontal">
+            <h4>Thanh Toán</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.maKH, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    Mã khách hàng @Html.EditorFor(model => model.maKH, new { htmlAttributes = new { @Value = "" } })
+                    @Html.ValidationMessageFor(model => model.maKH, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.pin, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    Mã Pin @Html.EditorFor(model => model.pin, new { htmlAttributes = new { @Value = "" } })
+                    @Html.ValidationMessageFor(model => model.pin, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.soDu, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                   Số tiền @Html.EditorFor(model => model.soDu, new { htmlAttributes = new { @Value = "" } })
+                    @Html.ValidationMessageFor(model => model.soDu, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Thanh Toán" class="btn btn-default" />
+                </div>
+                <div style="margin-left:100px">
+                    @Html.ActionLink("Quay lại", "Index", "Home");
+                </div>
+            </div>
+        </div>
+    }
+    <h4 style="color:cornflowerblue;font-weight:bold;font-size:20px">@ViewBag.Mess</h4>
+</body>
+</html>

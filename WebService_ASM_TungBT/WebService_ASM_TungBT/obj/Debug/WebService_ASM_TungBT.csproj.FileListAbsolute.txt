@@ -16,3 +16,4 @@ D:\EAP_TungBT\WebService_ASM_TungBT\WebService_ASM_TungBT\bin\Microsoft.AI.Windo
 D:\EAP_TungBT\WebService_ASM_TungBT\WebService_ASM_TungBT\bin\Microsoft.ApplicationInsights.xml
 D:\EAP_TungBT\WebService_ASM_TungBT\WebService_ASM_TungBT\obj\Debug\WebService_ASM_TungBT.dll
 D:\EAP_TungBT\WebService_ASM_TungBT\WebService_ASM_TungBT\obj\Debug\WebService_ASM_TungBT.pdb
+D:\EAP_TungBT\WebService_ASM_TungBT\WebService_ASM_TungBT\obj\Debug\WebService_ASM_TungBT.csprojResolveAssemblyReference.cache

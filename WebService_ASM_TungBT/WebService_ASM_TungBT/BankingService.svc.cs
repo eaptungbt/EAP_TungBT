@@ -43,8 +43,8 @@ namespace WebService_ASM_TungBT
                             Congtien(doiTac, soTien);
                             TruTien(khachHang, soTien);
                             //luu vao ls
-                            string createMAGD = "GD_" +khachHang.maKH.ToUpper()+ DateTime.Now.ToString();
-                            string createTENGD = khachHang.maKH + " pay " + doiTac.maDoiTac;
+                            string createMAGD = "GD_" +khachHang.maKH.ToUpper()+"_"+ DateTime.Now.ToString();
+                            string createTENGD = khachHang.maKH.ToUpper() + "pay" + doiTac.maDoiTac.ToUpper() + "_" + DateTime.Now.ToString();
                             ghiGD(createMAGD,createTENGD,khachHang,doiTac,soTien,hthuc);
                             return "Thành Công";
                         }
@@ -177,7 +177,9 @@ namespace WebService_ASM_TungBT
         }
 
         private bool checkSoDu(decimal sotien, KhachHang kh) {
-            if (sotien < (kh.soDu-50000)) {
+            KhachHang khackHang = data.KhachHangs.Where(khang => khang.maKH==kh.maKH && khang.pin==kh.pin).FirstOrDefault();
+            if (sotien < (khackHang.soDu - 50000))
+            {
                 return true;
             }
             return false;
