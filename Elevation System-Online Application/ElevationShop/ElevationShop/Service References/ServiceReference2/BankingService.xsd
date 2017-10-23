@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:61379/BankingService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WebService_ASM_TungBT" />
+  <xs:element name="ThanhToan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WebService_ASM_TungBT" minOccurs="0" name="doiTac" nillable="true" type="q1:DoiTac" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WebService_ASM_TungBT" minOccurs="0" name="khachHang" nillable="true" type="q2:KhachHang" />
+        <xs:element minOccurs="0" name="soTien" type="xs:decimal" />
+        <xs:element minOccurs="0" name="hthuc" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThanhToanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ThanhToanResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LichSuKhachHang">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WebService_ASM_TungBT" minOccurs="0" name="khachHang" nillable="true" type="q3:KhachHang" />
+        <xs:element minOccurs="0" name="fromDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="todate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LichSuKhachHangResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WebService_ASM_TungBT" minOccurs="0" name="LichSuKhachHangResult" nillable="true" type="q4:ArrayOfGiaoDich" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LichSuDoiTac">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WebService_ASM_TungBT" minOccurs="0" name="doiTac" nillable="true" type="q5:DoiTac" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LichSuDoiTacResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WebService_ASM_TungBT" minOccurs="0" name="LichSuDoiTacResult" nillable="true" type="q6:ArrayOfGiaoDich" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSoDuKhachHang">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WebService_ASM_TungBT" minOccurs="0" name="khachHang" nillable="true" type="q7:KhachHang" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSoDuKhachHangResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getSoDuKhachHangResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSoDuDoiTac">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WebService_ASM_TungBT" minOccurs="0" name="doiTac" nillable="true" type="q8:DoiTac" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSoDuDoiTacResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getSoDuDoiTacResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

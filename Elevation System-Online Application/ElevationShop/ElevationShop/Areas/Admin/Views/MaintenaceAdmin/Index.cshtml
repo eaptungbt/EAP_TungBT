@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ElevationShop.ServiceReference1.Maintenance>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>All Maintenance Requirements</h2>
+
+
+<table class="table table-striped table-bordered table-hover dataTable no-footer dtr-inline">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idMt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idOder)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.problem)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idMt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idOder)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.problem)
+        </td>
+    </tr>
+}
+
+</table>

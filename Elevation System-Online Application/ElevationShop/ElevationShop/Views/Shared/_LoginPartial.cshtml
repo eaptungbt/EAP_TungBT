@@ -1,0 +1,23 @@
+﻿@using ElevationShop.ServiceReference1;
+<ul class="nav navbar-nav navbar-right">
+    @if (Session["user"] == null)
+    {
+        <li>@Html.ActionLink("Register", "Index", "Regis")</li>
+        <li>@Html.ActionLink("Log in", "Index", "Login")</li>
+    }
+</ul>
+<ul class="nav navbar-nav navbar-right">
+    @{
+        if (Session["user"] != null)
+        {
+            Customer p = new Customer();
+            p = (Customer)Session["user"];
+            string name = p.nameCustomer;
+
+            <li><p style="font-size:18px;color:white;margin-top:14px;">@name</p></li>
+            <li>@Html.ActionLink("Log out", "Logout", "Login")</li>
+        }
+
+    }
+    }
+</ul>

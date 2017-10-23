@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ElevationShop.ServiceReference1.Feedback>
+
+@{
+    ViewBag.Title = "Feedback";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1.cshtml";
+}
+<br />
+<table class="table table-striped table-bordered table-hover dataTable no-footer dtr-inline">
+    <caption style="font-weight:bold">All Feedback</caption>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idFb)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idElevator)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Satisfy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.problem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.improvement)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idFb)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idElevator)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Satisfy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.problem)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.improvement)
+        </td>
+    </tr>
+}
+</table>

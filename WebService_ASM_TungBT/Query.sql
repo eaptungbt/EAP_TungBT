@@ -31,11 +31,20 @@ Insert into KhachHang Values('KH02','1234',10000000)
 Insert into KhachHang Values('KH03','1234',1000000)
 Insert into KhachHang Values('KH04','1234',3000000)
 Insert into KhachHang Values('KH05','1234',2000000)
+insert into KhachHang values('atm','1234',20000000000)
+Insert into KhachHang Values('khachhang1@gmail.com','1234',200000000)
+Insert into KhachHang Values('nguyenvana@gmail.com','1234',2000000000)
 Select * from KhachHang
 
 Insert into DoiTac Values('DT01','1234',15000000)
 Insert into DoiTac Values('DT02','1234',50000000)
 Insert into DoiTac Values('DT03','1234',10000000)
 Insert into DoiTac Values('DT04','1234',150000000)
+Insert into DoiTac Values('Elevation','1234',150000000)
+Insert into DoiTac Values('ElevationCompany','1234',15000000)
 Select * from  DoiTac
+
+Select * from GiaoDich
+
+
 

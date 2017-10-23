@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ElevationShop.ServiceReference1.Elevator>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>All Design</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-striped table-bordered table-hover dataTable no-footer dtr-inline">
+    <tr>
+        <th>
+            ID Design
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.systemType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.functionElevator)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descriptionElevator)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.design)
+        </th>*@
+        <th>Option</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idElevator)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.systemType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.functionElevator)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descriptionElevator)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.design)
+        </td>*@
+        <td>@Html.ActionLink("Add to Cart", "addToCart", "Cart", new { id = item.idElevator }, null)</td>
+    </tr>
+}
+
+</table>

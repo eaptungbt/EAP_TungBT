@@ -31,7 +31,7 @@ namespace WebService_ASM_TungBT
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Bare,
             UriTemplate = "History/")]
-        List<GiaoDich> LichSuDoiTac(DoiTac doiTac, DateTime fromDate, DateTime todate);
+        List<GiaoDich> LichSuDoiTac(DoiTac doiTac);
 
         [OperationContract]
         [WebInvoke(Method = "GET",

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9dce9dc4-4140-4555-aa5a-832d7bef8de1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:54471/ElevatorService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ElevatorService.xsd" MetadataType="Schema" ID="ae3437be-53e5-4330-9372-5a6a321f2334" SourceId="1" SourceUrl="http://localhost:54471/ElevatorService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ElevatorService.disco" MetadataType="Disco" ID="f4ecc0e4-89dc-4f26-b80f-d9e45fcd44c8" SourceId="1" SourceUrl="http://localhost:54471/ElevatorService.svc?disco" />
+    <MetadataFile FileName="ElevatorService1.xsd" MetadataType="Schema" ID="8252bdfe-af1f-4717-8dbd-64d63a1a2420" SourceId="1" SourceUrl="http://localhost:54471/ElevatorService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ElevatorService2.xsd" MetadataType="Schema" ID="0d1c28fd-c83b-46dc-92c0-fd4bc8cb595e" SourceId="1" SourceUrl="http://localhost:54471/ElevatorService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ElevatorService.wsdl" MetadataType="Wsdl" ID="650bc7a4-9f93-4259-90cc-24f01c38f1b8" SourceId="1" SourceUrl="http://localhost:54471/ElevatorService.svc?wsdl" />
+    <MetadataFile FileName="ElevatorService3.xsd" MetadataType="Schema" ID="cf52c0c8-3131-4d14-8e1e-9417d5084637" SourceId="1" SourceUrl="http://localhost:54471/ElevatorService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

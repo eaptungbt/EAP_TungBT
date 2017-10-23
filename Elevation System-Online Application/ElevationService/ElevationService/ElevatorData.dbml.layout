@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.875" name="ElevatorData">
+  <DataContextMoniker Name="/ElevatorDataDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a8d23e5b-cbe5-4bd3-9c39-49907c55df63" absoluteBounds="0.75, 0.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/ElevatorDataDataContext/Customer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d8c6a173-d210-4b08-a750-c2884100ba7f" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f5707509-c789-44fd-85cd-034f77c46a86" absoluteBounds="3.5, 6.5, 2, 2.1554996744791675">
+      <DataClassMoniker Name="/ElevatorDataDataContext/Elevator" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b5d1af9a-8b19-4c0a-ab3f-8811bcf0695c" absoluteBounds="3.515, 6.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f2f9682c-7dd4-422c-ac3c-4fe6b07fdfa2" absoluteBounds="0.75, 3.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ElevatorDataDataContext/Employee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd5fb72b-8b54-418b-a6a0-9b249f3812e1" absoluteBounds="0.765, 4.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aba0053a-1bb8-4ae5-898d-b388b0fc61e4" absoluteBounds="6.25, 6.625, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/ElevatorDataDataContext/Feedback" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3b7a672f-80b9-4c62-989c-4a98054c1e99" absoluteBounds="6.265, 7.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dbd2823b-cd01-4277-b7d1-0583bf7ff7ec" absoluteBounds="6.25, 3.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ElevatorDataDataContext/Maintenance" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7e4f6268-3351-425c-8864-d77cad8333cf" absoluteBounds="6.265, 4.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7fe0fc38-a45c-4d69-8a88-c8bbb062ff7a" absoluteBounds="3.5, 3.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/ElevatorDataDataContext/Order" />
+      <nestedChildShapes>
+        <elementListCompartment Id="099b4201-4e13-4bb2-8794-3e56b308fd58" absoluteBounds="3.515, 4.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9361702f-0d5e-44bc-b08e-585003f37c14" absoluteBounds="6.25, 0.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/ElevatorDataDataContext/OrderDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="677cb210-be5d-4139-a7e3-f276579a9f70" absoluteBounds="6.265, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 7.60659912109375); (6.25 : 7.60659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ElevatorDataDataContext/Elevator/Elevator_Feedback" />
+      <nodes>
+        <classShapeMoniker Id="f5707509-c789-44fd-85cd-034f77c46a86" />
+        <classShapeMoniker Id="aba0053a-1bb8-4ae5-898d-b388b0fc61e4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.66429768880208); (5.79166666666667 : 4.66429768880208 : JumpStart); (5.95833333333333 : 4.66429768880208 : JumpEnd); (6.25 : 4.66429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ElevatorDataDataContext/Order/Order_Maintenance" />
+      <nodes>
+        <classShapeMoniker Id="7fe0fc38-a45c-4d69-8a88-c8bbb062ff7a" />
+        <classShapeMoniker Id="dbd2823b-cd01-4277-b7d1-0583bf7ff7ec" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.63544840494792); (4.5 : 1.63544840494792); (4.5 : 3.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ElevatorDataDataContext/Customer/Customer_Order" />
+      <nodes>
+        <classShapeMoniker Id="a8d23e5b-cbe5-4bd3-9c39-49907c55df63" />
+        <classShapeMoniker Id="7fe0fc38-a45c-4d69-8a88-c8bbb062ff7a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.66429768880208); (3.5 : 4.66429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ElevatorDataDataContext/Employee/Employee_Order" />
+      <nodes>
+        <classShapeMoniker Id="f2f9682c-7dd4-422c-ac3c-4fe6b07fdfa2" />
+        <classShapeMoniker Id="7fe0fc38-a45c-4d69-8a88-c8bbb062ff7a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 6.5); (5.875 : 6.125); (5.875 : 1.63544840494792); (6.25 : 1.63544840494792)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ElevatorDataDataContext/Elevator/Elevator_OrderDetail" />
+      <nodes>
+        <classShapeMoniker Id="f5707509-c789-44fd-85cd-034f77c46a86" />
+        <classShapeMoniker Id="9361702f-0d5e-44bc-b08e-585003f37c14" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.0312525 : 3.75); (5.0312525 : 2.10942510742187); (5.79166666666667 : 2.10942510742187 : JumpStart); (5.95833333333333 : 2.10942510742187 : JumpEnd); (6.25 : 2.10942510742187)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ElevatorDataDataContext/Order/Order_OrderDetail" />
+      <nodes>
+        <classShapeMoniker Id="7fe0fc38-a45c-4d69-8a88-c8bbb062ff7a" />
+        <classShapeMoniker Id="9361702f-0d5e-44bc-b08e-585003f37c14" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

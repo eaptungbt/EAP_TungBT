@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WebService_ASM_TungBT" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WebService_ASM_TungBT" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="DoiTac">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="maDoiTac" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="matKhau" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="soDu" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GiaoDiches" nillable="true" type="tns:ArrayOfGiaoDich">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DoiTac" nillable="true" type="tns:DoiTac" />
+  <xs:complexType name="ArrayOfGiaoDich">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GiaoDich" nillable="true" type="tns:GiaoDich" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGiaoDich" nillable="true" type="tns:ArrayOfGiaoDich" />
+  <xs:complexType name="GiaoDich">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="maGD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="maKH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="maDoiTac" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="soTien" type="xs:decimal" />
+      <xs:element minOccurs="0" name="tenGD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="loai" type="xs:int" />
+      <xs:element minOccurs="0" name="thoiGian" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="phiGD" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GiaoDich" nillable="true" type="tns:GiaoDich" />
+  <xs:complexType name="KhachHang">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="maKH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="soDu" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GiaoDiches" nillable="true" type="tns:ArrayOfGiaoDich">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KhachHang" nillable="true" type="tns:KhachHang" />
+</xs:schema>

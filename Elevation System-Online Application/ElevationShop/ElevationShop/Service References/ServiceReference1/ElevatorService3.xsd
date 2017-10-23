@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ElevationService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ElevationService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Customer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="emailCustomer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameCustomer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="passwordCustomer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="addressCustomer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="company" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Orders" nillable="true" type="tns:ArrayOfOrder">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Customer" nillable="true" type="tns:Customer" />
+  <xs:complexType name="ArrayOfOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Order" nillable="true" type="tns:Order" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrder" nillable="true" type="tns:ArrayOfOrder" />
+  <xs:complexType name="Order">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idOder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="emailCustomer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="emailEmployee" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderStatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="time" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Maintenances" nillable="true" type="tns:ArrayOfMaintenance">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="OrderDetails" nillable="true" type="tns:ArrayOfOrderDetail">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Order" nillable="true" type="tns:Order" />
+  <xs:complexType name="ArrayOfMaintenance">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Maintenance" nillable="true" type="tns:Maintenance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMaintenance" nillable="true" type="tns:ArrayOfMaintenance" />
+  <xs:complexType name="Maintenance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idMt" type="xs:int" />
+      <xs:element minOccurs="0" name="idOder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="problem" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="statusMaintenace" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Maintenance" nillable="true" type="tns:Maintenance" />
+  <xs:complexType name="ArrayOfOrderDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderDetail" nillable="true" type="tns:OrderDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrderDetail" nillable="true" type="tns:ArrayOfOrderDetail" />
+  <xs:complexType name="OrderDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idOD" type="xs:int" />
+      <xs:element minOccurs="0" name="idOder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idElevator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="qty" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="price" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderDetail" nillable="true" type="tns:OrderDetail" />
+  <xs:complexType name="Employee">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="emailEmployee" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameEmployee" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="passwordEmployee" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="addressEmpoyee" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Orders" nillable="true" type="tns:ArrayOfOrder">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Employee" nillable="true" type="tns:Employee" />
+  <xs:complexType name="ArrayOfElevator">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Elevator" nillable="true" type="tns:Elevator" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfElevator" nillable="true" type="tns:ArrayOfElevator" />
+  <xs:complexType name="Elevator">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idElevator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="systemType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="functionElevator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="number" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="cost" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="descriptionElevator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="design" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Feedbacks" nillable="true" type="tns:ArrayOfFeedback">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="OrderDetails" nillable="true" type="tns:ArrayOfOrderDetail">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Elevator" nillable="true" type="tns:Elevator" />
+  <xs:complexType name="ArrayOfFeedback">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Feedback" nillable="true" type="tns:Feedback" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFeedback" nillable="true" type="tns:ArrayOfFeedback" />
+  <xs:complexType name="Feedback">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idFb" type="xs:int" />
+      <xs:element minOccurs="0" name="idElevator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Satisfy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="problem" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="improvement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="statusFeedback" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Feedback" nillable="true" type="tns:Feedback" />
+</xs:schema>

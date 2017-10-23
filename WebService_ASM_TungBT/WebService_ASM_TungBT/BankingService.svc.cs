@@ -18,9 +18,9 @@ namespace WebService_ASM_TungBT
             var ls = data.GiaoDiches.Where(gd => ((gd.maKH==khachHang.maKH)&&(gd.thoiGian >= fromDate)&&(gd.thoiGian <= todate))).ToList();
             return ls;
         }
-        public List<GiaoDich> LichSuDoiTac(DoiTac doiTac, DateTime fromDate, DateTime todate)
+        public List<GiaoDich> LichSuDoiTac(DoiTac doiTac)
         {
-            var ls = data.GiaoDiches.Where(gd => ((gd.maDoiTac == doiTac.maDoiTac) && (gd.thoiGian >= fromDate) && (gd.thoiGian <= todate))).ToList();
+            var ls = data.GiaoDiches.Where(gd => ((gd.maDoiTac == doiTac.maDoiTac))).ToList();
             return ls;
         }
 
@@ -43,10 +43,11 @@ namespace WebService_ASM_TungBT
                             Congtien(doiTac, soTien);
                             TruTien(khachHang, soTien);
                             //luu vao ls
+                            Random rd = new Random();
                             string createMAGD = "GD_" +khachHang.maKH.ToUpper()+"_"+ DateTime.Now.ToString();
-                            string createTENGD = khachHang.maKH.ToUpper() + "pay" + doiTac.maDoiTac.ToUpper() + "_" + DateTime.Now.ToString();
+                            string createTENGD = khachHang.maKH.ToUpper() + "pay" + doiTac.maDoiTac.ToUpper();
                             ghiGD(createMAGD,createTENGD,khachHang,doiTac,soTien,hthuc);
-                            return "Thành Công";
+                            return "thanhcong";
                         }
                         else
                         {

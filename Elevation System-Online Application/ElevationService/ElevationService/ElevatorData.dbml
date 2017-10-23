@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ElevationDB" Class="ElevatorDataDataContext" Serialization="Unidirectional" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=THANHTUNG;Initial Catalog=ElevationDB;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ElevationDBConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Customer" Member="Customers">
+    <Type Name="Customer">
+      <Column Name="emailCustomer" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nameCustomer" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="passwordCustomer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="addressCustomer" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="company" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Customer_Order" Member="Orders" ThisKey="emailCustomer" OtherKey="emailCustomer" Type="Order" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Elevator" Member="Elevators">
+    <Type Name="Elevator">
+      <Column Name="idElevator" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="systemType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="functionElevator" Type="System.String" DbType="NVarChar(54)" CanBeNull="true" />
+      <Column Name="number" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cost" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="descriptionElevator" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="design" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Elevator_Feedback" Member="Feedbacks" ThisKey="idElevator" OtherKey="idElevator" Type="Feedback" />
+      <Association Name="Elevator_OrderDetail" Member="OrderDetails" ThisKey="idElevator" OtherKey="idElevator" Type="OrderDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Employee" Member="Employees">
+    <Type Name="Employee">
+      <Column Name="emailEmployee" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nameEmployee" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="passwordEmployee" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="addressEmpoyee" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Employee_Order" Member="Orders" ThisKey="emailEmployee" OtherKey="emailEmployee" Type="Order" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Feedback" Member="Feedbacks">
+    <Type Name="Feedback">
+      <Column Name="idFb" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idElevator" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Satisfy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="problem" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="improvement" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="statusFeedback" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Elevator_Feedback" Member="Elevator" ThisKey="idElevator" OtherKey="idElevator" Type="Elevator" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Maintenance" Member="Maintenances">
+    <Type Name="Maintenance">
+      <Column Name="idMt" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idOder" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="problem" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="statusMaintenace" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Order_Maintenance" Member="Order" ThisKey="idOder" OtherKey="idOder" Type="Order" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Order]" Member="Orders">
+    <Type Name="Order">
+      <Column Name="idOder" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="emailCustomer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="emailEmployee" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OrderStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Order_Maintenance" Member="Maintenances" ThisKey="idOder" OtherKey="idOder" Type="Maintenance" />
+      <Association Name="Order_OrderDetail" Member="OrderDetails" ThisKey="idOder" OtherKey="idOder" Type="OrderDetail" />
+      <Association Name="Customer_Order" Member="Customer" ThisKey="emailCustomer" OtherKey="emailCustomer" Type="Customer" IsForeignKey="true" />
+      <Association Name="Employee_Order" Member="Employee" ThisKey="emailEmployee" OtherKey="emailEmployee" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrderDetail" Member="OrderDetails">
+    <Type Name="OrderDetail">
+      <Column Name="idOD" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idOder" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="idElevator" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="qty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="price" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="Elevator_OrderDetail" Member="Elevator" ThisKey="idElevator" OtherKey="idElevator" Type="Elevator" IsForeignKey="true" />
+      <Association Name="Order_OrderDetail" Member="Order" ThisKey="idOder" OtherKey="idOder" Type="Order" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ElevatorService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:54471/ElevatorService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:54471/ElevatorService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:54471/ElevatorService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ElevationService" />
+      <xsd:import schemaLocation="http://localhost:54471/ElevatorService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IElevatorService_loginCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:loginCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_loginCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loginCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_createCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:createCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_createCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_getAllCustomerID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllCustomerID" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_getAllCustomerID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllCustomerIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_loginEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:loginEmployee" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_loginEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loginEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_getProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProduct" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_getProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_getProductByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProductByID" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_getProductByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_getProductByDesign_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProductByDesign" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_getProductByDesign_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductByDesignResponse" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_addProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:addProduct" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_addProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_editProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:editProduct" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_editProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:editProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_deleteProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteProduct" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_deleteProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_getOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:getOrder" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_getOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_getOrderByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getOrderByID" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_getOrderByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getOrderByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_coutNewOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:coutNewOrder" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_coutNewOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:coutNewOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_getOrderByEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:getOrderByEmail" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_getOrderByEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getOrderByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_addOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:addOrder" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_addOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_addOrderDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:addOrderDetail" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_addOrderDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addOrderDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_getOrderDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:getOrderDetail" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_getOrderDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getOrderDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_updateOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateOrder" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_updateOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_countFeedback_InputMessage">
+    <wsdl:part name="parameters" element="tns:countFeedback" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_countFeedback_OutputMessage">
+    <wsdl:part name="parameters" element="tns:countFeedbackResponse" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_getFeedBack_InputMessage">
+    <wsdl:part name="parameters" element="tns:getFeedBack" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_getFeedBack_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getFeedBackResponse" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_addFeedback_InputMessage">
+    <wsdl:part name="parameters" element="tns:addFeedback" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_addFeedback_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addFeedbackResponse" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_seenFeedback_InputMessage">
+    <wsdl:part name="parameters" element="tns:seenFeedback" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_seenFeedback_OutputMessage">
+    <wsdl:part name="parameters" element="tns:seenFeedbackResponse" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_countMaintenance_InputMessage">
+    <wsdl:part name="parameters" element="tns:countMaintenance" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_countMaintenance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:countMaintenanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_seenMaintenance_InputMessage">
+    <wsdl:part name="parameters" element="tns:seenMaintenance" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_seenMaintenance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:seenMaintenanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_getMaintenance_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMaintenance" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_getMaintenance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMaintenanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_addMaintenance_InputMessage">
+    <wsdl:part name="parameters" element="tns:addMaintenance" />
+  </wsdl:message>
+  <wsdl:message name="IElevatorService_addMaintenance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addMaintenanceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IElevatorService">
+    <wsdl:operation name="loginCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IElevatorService/loginCustomer" message="tns:IElevatorService_loginCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IElevatorService/loginCustomerResponse" message="tns:IElevatorService_loginCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IElevatorService/createCustomer" message="tns:IElevatorService_createCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IElevatorService/createCustomerResponse" message="tns:IElevatorService_createCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllCustomerID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IElevatorService/getAllCustomerID" message="tns:IElevatorService_getAllCustomerID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IElevatorService/getAllCustomerIDResponse" message="tns:IElevatorService_getAllCustomerID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="loginEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IElevatorService/loginEmployee" message="tns:IElevatorService_loginEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IElevatorService/loginEmployeeResponse" message="tns:IElevatorService_loginEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IElevatorService/getProduct" message="tns:IElevatorService_getProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IElevatorService/getProductResponse" message="tns:IElevatorService_getProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IElevatorService/getProductByID" message="tns:IElevatorService_getProductByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IElevatorService/getProductByIDResponse" message="tns:IElevatorService_getProductByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductByDesign">
+      <wsdl:input wsaw:Action="http://tempuri.org/IElevatorService/getProductByDesign" message="tns:IElevatorService_getProductByDesign_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IElevatorService/getProductByDesignResponse" message="tns:IElevatorService_getProductByDesign_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IElevatorService/addProduct" message="tns:IElevatorService_addProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IElevatorService/addProductResponse" message="tns:IElevatorService_addProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="editProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IElevatorService/editProduct" message="tns:IElevatorService_editProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IElevatorService/editProductResponse" message="tns:IElevatorService_editProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IElevatorService/deleteProduct" message="tns:IElevatorService_deleteProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IElevatorService/deleteProductResponse" message="tns:IElevatorService_deleteProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IElevatorService/getOrder" message="tns:IElevatorService_getOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IElevatorService/getOrderResponse" message="tns:IElevatorService_getOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getOrderByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IElevatorService/getOrderByID" message="tns:IElevatorService_getOrderByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IElevatorService/getOrderByIDResponse" message="tns:IElevatorService_getOrderByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="coutNewOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IElevatorService/coutNewOrder" message="tns:IElevatorService_coutNewOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IElevatorService/coutNewOrderResponse" message="tns:IElevatorService_coutNewOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getOrderByEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IElevatorService/getOrderByEmail" message="tns:IElevatorService_getOrderByEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IElevatorService/getOrderByEmailResponse" message="tns:IElevatorService_getOrderByEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IElevatorService/addOrder" message="tns:IElevatorService_addOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IElevatorService/addOrderResponse" message="tns:IElevatorService_addOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addOrderDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IElevatorService/addOrderDetail" message="tns:IElevatorService_addOrderDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IElevatorService/addOrderDetailResponse" message="tns:IElevatorService_addOrderDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getOrderDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IElevatorService/getOrderDetail" message="tns:IElevatorService_getOrderDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IElevatorService/getOrderDetailResponse" message="tns:IElevatorService_getOrderDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IElevatorService/updateOrder" message="tns:IElevatorService_updateOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IElevatorService/updateOrderResponse" message="tns:IElevatorService_updateOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="countFeedback">
+      <wsdl:input wsaw:Action="http://tempuri.org/IElevatorService/countFeedback" message="tns:IElevatorService_countFeedback_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IElevatorService/countFeedbackResponse" message="tns:IElevatorService_countFeedback_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getFeedBack">
+      <wsdl:input wsaw:Action="http://tempuri.org/IElevatorService/getFeedBack" message="tns:IElevatorService_getFeedBack_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IElevatorService/getFeedBackResponse" message="tns:IElevatorService_getFeedBack_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addFeedback">
+      <wsdl:input wsaw:Action="http://tempuri.org/IElevatorService/addFeedback" message="tns:IElevatorService_addFeedback_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IElevatorService/addFeedbackResponse" message="tns:IElevatorService_addFeedback_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="seenFeedback">
+      <wsdl:input wsaw:Action="http://tempuri.org/IElevatorService/seenFeedback" message="tns:IElevatorService_seenFeedback_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IElevatorService/seenFeedbackResponse" message="tns:IElevatorService_seenFeedback_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="countMaintenance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IElevatorService/countMaintenance" message="tns:IElevatorService_countMaintenance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IElevatorService/countMaintenanceResponse" message="tns:IElevatorService_countMaintenance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="seenMaintenance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IElevatorService/seenMaintenance" message="tns:IElevatorService_seenMaintenance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IElevatorService/seenMaintenanceResponse" message="tns:IElevatorService_seenMaintenance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMaintenance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IElevatorService/getMaintenance" message="tns:IElevatorService_getMaintenance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IElevatorService/getMaintenanceResponse" message="tns:IElevatorService_getMaintenance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addMaintenance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IElevatorService/addMaintenance" message="tns:IElevatorService_addMaintenance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IElevatorService/addMaintenanceResponse" message="tns:IElevatorService_addMaintenance_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IElevatorService" type="tns:IElevatorService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="loginCustomer">
+      <soap:operation soapAction="http://tempuri.org/IElevatorService/loginCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createCustomer">
+      <soap:operation soapAction="http://tempuri.org/IElevatorService/createCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllCustomerID">
+      <soap:operation soapAction="http://tempuri.org/IElevatorService/getAllCustomerID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loginEmployee">
+      <soap:operation soapAction="http://tempuri.org/IElevatorService/loginEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProduct">
+      <soap:operation soapAction="http://tempuri.org/IElevatorService/getProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductByID">
+      <soap:operation soapAction="http://tempuri.org/IElevatorService/getProductByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductByDesign">
+      <soap:operation soapAction="http://tempuri.org/IElevatorService/getProductByDesign" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addProduct">
+      <soap:operation soapAction="http://tempuri.org/IElevatorService/addProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editProduct">
+      <soap:operation soapAction="http://tempuri.org/IElevatorService/editProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteProduct">
+      <soap:operation soapAction="http://tempuri.org/IElevatorService/deleteProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrder">
+      <soap:operation soapAction="http://tempuri.org/IElevatorService/getOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrderByID">
+      <soap:operation soapAction="http://tempuri.org/IElevatorService/getOrderByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="coutNewOrder">
+      <soap:operation soapAction="http://tempuri.org/IElevatorService/coutNewOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrderByEmail">
+      <soap:operation soapAction="http://tempuri.org/IElevatorService/getOrderByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addOrder">
+      <soap:operation soapAction="http://tempuri.org/IElevatorService/addOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addOrderDetail">
+      <soap:operation soapAction="http://tempuri.org/IElevatorService/addOrderDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrderDetail">
+      <soap:operation soapAction="http://tempuri.org/IElevatorService/getOrderDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateOrder">
+      <soap:operation soapAction="http://tempuri.org/IElevatorService/updateOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="countFeedback">
+      <soap:operation soapAction="http://tempuri.org/IElevatorService/countFeedback" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFeedBack">
+      <soap:operation soapAction="http://tempuri.org/IElevatorService/getFeedBack" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addFeedback">
+      <soap:operation soapAction="http://tempuri.org/IElevatorService/addFeedback" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="seenFeedback">
+      <soap:operation soapAction="http://tempuri.org/IElevatorService/seenFeedback" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="countMaintenance">
+      <soap:operation soapAction="http://tempuri.org/IElevatorService/countMaintenance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="seenMaintenance">
+      <soap:operation soapAction="http://tempuri.org/IElevatorService/seenMaintenance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaintenance">
+      <soap:operation soapAction="http://tempuri.org/IElevatorService/getMaintenance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addMaintenance">
+      <soap:operation soapAction="http://tempuri.org/IElevatorService/addMaintenance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ElevatorService">
+    <wsdl:port name="BasicHttpBinding_IElevatorService" binding="tns:BasicHttpBinding_IElevatorService">
+      <soap:address location="http://localhost:54471/ElevatorService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

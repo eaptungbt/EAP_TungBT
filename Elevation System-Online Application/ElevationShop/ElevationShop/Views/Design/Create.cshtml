@@ -1,0 +1,74 @@
+﻿@model ElevationShop.ServiceReference1.Elevator
+
+@{
+    ViewBag.Title = "Design";
+}
+
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <br />
+    <div class="form-horizontal">
+        <h4>Design Elevator</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <p class="control-label col-md-2" style="font-weight:bold">ID Design</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.idElevator, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.idElevator, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.systemType, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <p class="control-label col-md-2" style="font-weight:bold">System type</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.systemType, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.systemType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.functionElevator, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <p class="control-label col-md-2" style="font-weight:bold">Function</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.functionElevator, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.functionElevator, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <p class="control-label col-md-2" style="font-weight:bold">Number</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.number, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.number, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <p class="control-label col-md-2" style="font-weight:bold">Cost</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.cost, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.cost, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.descriptionElevator, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <p class="control-label col-md-2" style="font-weight:bold">Description</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.descriptionElevator, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.descriptionElevator, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+

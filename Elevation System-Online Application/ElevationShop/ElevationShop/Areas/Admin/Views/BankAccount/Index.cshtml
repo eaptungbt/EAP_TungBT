@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ElevationShop.ServiceReference2.GiaoDich>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1.cshtml";
+}
+@using ElevationShop.ServiceReference2
+@{
+ BankingServiceClient bankClient = new BankingServiceClient();
+}
+<br />
+<h2>Lich sử giao dịch</h2>
+
+        <h4>Số dư: </h4>
+        <p style="font-weight:bold">@bankClient.getSoDuDoiTac(new DoiTac() { maDoiTac = "Elevation", matKhau = "1234" }) (vnd)</p>
+
+<table class="table table-striped table-bordered table-hover dataTable no-footer dtr-inline">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.maGD)
+        </th>
+        <th>
+            Sender 
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.soTien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tenGD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.thoiGian)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phiGD)
+        </th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.maGD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.maKH)
+        </td>
+        @{ 
+            string tien= "+ " + item.soTien.ToString();
+        }
+        <td>@tien</td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tenGD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.thoiGian)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phiGD)
+        </td>
+    </tr>
+}
+
+</table>

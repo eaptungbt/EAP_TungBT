@@ -1,0 +1,75 @@
+﻿@model IEnumerable<ElevationShop.Models.ItemCart>
+@using ElevationShop.Models;
+@using ElevationShop.ServiceReference1
+@{
+    ViewBag.Title = "Cart";
+}
+
+<h2>Cart</h2>
+
+<table class="table table-striped table-bordered table-hover dataTable no-footer dtr-inline">
+    <tr>
+        <th>
+            ID Product
+        </th>
+        <th>
+            Elevation System
+        </th>
+        <th>
+            Function
+        </th>
+        <th>
+            Number
+        </th>
+        <th>
+            Cost
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Qty
+        </th>
+        <th>Option</th>
+    </tr>
+    @{
+        decimal sum = 0;
+    }
+    @if ((List<ItemCart>)Session["cart"] != null && ((List<ItemCart>)Session["cart"]).Count() != 0)
+    {
+        foreach (ItemCart item in ((List<ItemCart>)Session["cart"]))
+        {
+            if (item != null)
+            {
+                sum += ((decimal)item.qty * (decimal)item.eleva.cost);
+            }
+            <tr>
+                <td>@item.eleva.idElevator</td>
+                <td>@item.eleva.systemType</td>
+                <td>@item.eleva.functionElevator</td>
+                <td>@item.eleva.number</td>
+                <td>@item.eleva.cost</td>
+                <td>@item.eleva.descriptionElevator</td>
+                <td>@item.qty </td>
+                <td>@Html.ActionLink("Delete", "Delete", "Cart", new { id = item.eleva.idElevator }, null)</td>
+            </tr>
+        }
+        <tr>
+            <td style="font-size:22px;font-weight:bold;"> Sum </td>
+            <td colspan="5" align="center" style="font-size:20px;color:cornflowerblue;font-weight:bold">@sum vnd</td>
+        </tr>
+    }
+    else
+    {
+        <h3>Không có mặt khàng nào trong giỏ.</h3>
+    }
+</table>
+@if ((List<ItemCart>)Session["cart"] != null && ((List<ItemCart>)Session["cart"]).Count() != 0) {
+    using (Html.BeginForm("OrderNow", "Order"))
+    {
+        <p>
+            <input type="submit" value="Order" />
+        </p>
+    }
+
+}

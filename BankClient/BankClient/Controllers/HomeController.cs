@@ -29,7 +29,7 @@ namespace BankClient.Controllers
         }
         public ActionResult Garena()
         {
-            DoiTac dt = new DoiTac() { maDoiTac = "DT03", matKhau = "1234" };
+            DoiTac dt = new DoiTac() { maDoiTac = "ElevationCompany", matKhau = "1234" };
             Session["DoiTac"] = dt;
             return RedirectToAction("Index", "ThanhToan");
         }

@@ -1,0 +1,72 @@
+﻿@model ElevationShop.ServiceReference1.Elevator
+
+@{
+    ViewBag.Title = "ViewDeatilProduct";
+}
+<br />
+<div>
+    <h4>Information Elevator</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            ID Elevator
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idElevator)
+        </dd>
+        <br />
+        <dt>
+            System Type
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.systemType)
+        </dd>
+        <br />
+        <dt>
+            Function
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.functionElevator)
+        </dd>
+        <br />
+        <dt>
+            Number
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.number)
+        </dd>
+        <br />
+        <dt>
+            Cost
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cost)
+        </dd>
+
+        <br />
+        <dt>
+            Description
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descriptionElevator)
+        </dd>
+        <br />
+        <dt>
+            Design
+        </dt>
+        @if (Model.design == "0") {
+            <dd>Nhà sản xuất</dd>
+        }else {
+            <dd>Do bạn thiết kế</dd>
+          }
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back", "Index")
+</p>
